@@ -31,13 +31,20 @@ public class Movimentacao {
 	@ManyToOne
 	private Conta conta;
 
-	
+	@ManyToMany
+	private List<Categoria> categorias;
 
 	public Integer getId() {
 		return id;
 	}
 
-	
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
 
 	public void setId(Integer id) {
 		this.id = id;

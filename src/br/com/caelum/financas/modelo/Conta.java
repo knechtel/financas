@@ -1,5 +1,7 @@
 package br.com.caelum.financas.modelo;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -17,9 +19,18 @@ public class Conta {
     private String agencia;
     private String numero;
 
-    
+    @OneToMany(mappedBy="conta")
+    private List<Movimentacao> listMoviementacao;
 
-    public Integer getId() {
+    public List<Movimentacao> getListMoviementacao() {
+		return listMoviementacao;
+	}
+
+	public void setListMoviementacao(List<Movimentacao> listMoviementacao) {
+		this.listMoviementacao = listMoviementacao;
+	}
+
+	public Integer getId() {
         return id;
     }
 
